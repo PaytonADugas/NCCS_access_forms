@@ -1,0 +1,33 @@
+{
+  "name": "fill-pdf",
+  "version": "1.1.0",
+  "description": "Fill out pdf forms",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dommmel/fill-pdf"
+  },
+  "keywords": [
+    "pdf",
+    "fdf",
+    "utf8",
+    "pdftk"
+  ],
+  "author": "Dominik Heier <dominik.heier@gmail.com> (http://www.flexify.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dommmel/fill-pdf/issues"
+  },
+  "homepage": "https://github.com/dommmel/fill-pdf",
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "temp": "~0.8.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0",
+    "temporary": "0.0.8"
+  }
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Student</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+
+      h1{
+        text-align: center;
+      }
+
+      td{
+        border: 2px solid;
+        padding-right: 40px;
+      }
+      th{
+        border: 2px solid;
+        text-align: center;
+        padding: 10px;
+      }
+      table{
+        table-layout: fixed;
+        width: 1000px;
+        margin: auto;
+      }
+      .noRightBorder{
+        border-right: 0px;
+      }
+      .noLeftBorder{
+        border-left: 0px;
+      }
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      p{
+        font-weight: bold;
+      }
+      .add_breaks{
+        white-space: pre-line;
+      }
+      .submitted{
+        font-size: 14px;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div style='padding-top: 50px' class="container">
+      <div class="jumbotron">
+        <h1>Edit Form for <%=student.first_name%> <%=student.last_name%> - <%= student.school_year %></h1>
+        <form method="post">
+          <table>
+            <thead>
+              <th>STUDENT INFORMATION</th>
+              <th>FAMILY INFORMATION</th>
+            </thead>
+            <tr>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>Student ID:</b> <%=student.student_id%></li>
+                  <br>
+                  <li><b>Name:</b> <%=student.first_name%> <%=student.last_name%></li>
+                  <li><b>Birth Date:</b> <%=student.birth_date%></li>
+                  <li><b>Age:</b> <input id='age' name="age"></input></li>
+                  <li><b>Gender:</b> <%=student.gender%></li>
+                  <li><b>Disability:</b> <%=student.disabilities%></li>
+                  <li><b>Grade:</b><select id='grade_select' name="grade"></select></li>
+                </ul>
+              </td>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>Father's Name:</b> <input id='father_name' name="father_name"></input></li>
+                  <li><b>Father's Employment:</b> <input id='father_employment' name="father_employment"></input></li>
+                  <li><b>Mother's Name:</b> <input id='mother_name' name="mother_name"></input></li>
+                  <li><b>Mother's Employment:</b> <input id='mother_employment' name="mother_employment"></input></li>
+                  <li><b>Address:</b> <input id='family_address' name="family_address"></input></li>
+                  <li><b>Phone:</b> <input id='family_phone' name="family_phone"></input></li>
+                  <li><b>Email:</b> <input id='family_email' name="family_email"></input></li>
+                  <li><b>Student Currently Living:</b> <input id='student_living_with' name="student_living_with"></input></li>
+                  <li><b>Student's Legal Guardian:</b> <input id='student_guardian' name="student_guardian"></input></li>
+                  <li><b>Church:</b> <input id='family_church' name="family_church"></input></li>
+                </ul>
+              </td>
+            </tr>
+
+            <thead>
+              <th>PARENTAL RESPONSIBILITY AGREEMENT</th>
+              <th>HSLDA Information</th>
+            </thead>
+            <tr>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>Affirm HSLDA:</b> <%=student.membership_agreement%></li>
+                  <li><b>Affirm Cirriculum:</b> <%=student.curriculum_agreement%></li>
+                  <li><b>Affirm Recordkeeping:</b> <%=student.record_keeping_agreement%></li>
+                  <li><b>Affirm Responsibility:</b> <%=student.parent_participation_agreement%></li>
+                  <li><b>Affirm 180 Days:</b> <%=student.parent_home_agreement%></li>
+                  <li><b>Affirm Attendance:</b> <%=student.attendance_grades_agreement%></li>
+                  <li><b>Affirm Course Details:</b> <%=student.course_of_study_course_description_agreement%></li>
+                  <li><b>Affirm Documentation:</b> <%=student.read_handbook_agreement%></li>
+                  <li><b>Affirm Withdrawal Notification:</b> <%=student.change_schools_agreement%></li>
+                  <li><b>Affirm Dismissal:</b> <%=student.enrolment_dismissal_agreement%></li>
+                  <li><b>Affirm Parental Responsibiltity:</b> <%=student.parent_direction_agreement%></li>
+                  <li><b>Father's Signature:</b> <%=student.father_signature%> <%=student.father_sign_date%></li>
+                  <li><b>Mother's Signature:</b> <%=student.mother_signature%> <%=student.mother_sign_date%></li>
+                </ul>
+              </td>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>HSLDA Member:</b> <%=student.HSLDA_membership%></li>
+                  <li><b>HSLDA Membership ID:</b> <input id='HSLDA_membership_id' name="HSLDA_membership_id"></input></li>
+                  <li><b>HSLDA Membership Expires:</b> <input id='HSLDA_membership_expires' name="HSLDA_membership_expires" ></input></li>
+                  <hr>
+                  <li>
+                    <b>Notes:</b> <br> <textarea name="notes" rows="8" cols="50"><%= student.notes%></textarea>
+                   </li>
+                </ul>
+              </td>
+            </tr>
+
+            <thead>
+              <th>FACULTY INFORMATION</th>
+              <th>RECIEVED INFORMATION</th>
+            </thead>
+            <tr>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>Primary Teacher:</b> <input id='primary_teacher' name="primary_teacher"></input></li>
+                  <li><b>Highschool Eduication:</b> <input id='high_school_eduication' name="high_school_eduication"></input></li>
+                  <li><b>Highschool Attended:</b> Name of school</li>
+                  <li><b>College Eduication:</b> <input id='college_eduication' name="college_eduication"></input></li>
+                  <li><b>Teaching Experience:</b> <textarea id='list_training' name="list_training"><%=student.list_training%></textarea></li>
+                </ul>
+              </td>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>Date Recieved:</b> <%=student.dateRecieved%></li>
+                  <li>
+                    <b>Fees Recieved:</b> <br> <textarea name="feesRecieved" rows="2" cols="50"><%= student.feesRecieved%></textarea>
+                  </li>
+                  <li>
+                    <b>Letters Sent:</b> <br> <textarea name="lettersSent" rows="2" cols="50"><%= student.lettersSent%></textarea>
+                  </li>
+                  <li>
+                    <b>Tdap:</b> <input id='tdap' name="tdap"></input>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+          <br>
+          <div class="text-center">
+            <button class="btn btn-primary" type="submit">Commit</button>
+            <a href='student?id=<%= student_id %>' class="btn btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+      var age = <%- JSON.stringify(student.age) %>;
+      var grade = <%- JSON.stringify(student.grade) %>;
+      document.getElementById('age').setAttribute('value', age);
+      //document.getElementById('grade').setAttribute('value', grade);
+
+      var father_name = <%- JSON.stringify(student.father_name) %>;
+      var father_employment = <%- JSON.stringify(student.father_employment) %>;
+      var mother_name = <%- JSON.stringify(student.mother_name) %>;
+      var mother_employment = <%- JSON.stringify(student.mother_employment) %>;
+      var family_address = <%- JSON.stringify(student.family_address) %>;
+      var family_phone = <%- JSON.stringify(student.family_phone) %>;
+      var family_email = <%- JSON.stringify(student.family_email) %>;
+      var student_living_with = <%- JSON.stringify(student.student_living_with) %>;
+      var student_guardian = <%- JSON.stringify(student.student_guardian) %>;
+      var family_church = <%- JSON.stringify(student.family_church) %>;
+      document.getElementById('father_name').setAttribute('value', father_name);
+      document.getElementById('father_employment').setAttribute('value', father_employment);
+      document.getElementById('mother_name').setAttribute('value', mother_name);
+      document.getElementById('mother_employment').setAttribute('value', mother_employment);
+      document.getElementById('family_address').setAttribute('value', family_address);
+      document.getElementById('family_phone').setAttribute('value', family_phone);
+      document.getElementById('family_email').setAttribute('value', family_email);
+      document.getElementById('student_living_with').setAttribute('value', student_living_with);
+      document.getElementById('student_guardian').setAttribute('value', student_guardian);
+      document.getElementById('family_church').setAttribute('value', family_church);
+
+      var primary_teacher = <%- JSON.stringify(student.primary_teacher) %>;
+      var high_school_eduication = <%- JSON.stringify(student.high_school_eduication) %>;
+      var college_eduication = <%- JSON.stringify(student.college_eduication) %>;
+      var list_training = <%- JSON.stringify(student.list_training) %>;
+      document.getElementById('primary_teacher').setAttribute('value', primary_teacher);
+      document.getElementById('high_school_eduication').setAttribute('value', high_school_eduication);
+      document.getElementById('college_eduication').setAttribute('value', college_eduication);
+      document.getElementById('list_training').setAttribute('value', list_training);
+
+      var tdap = <%- JSON.stringify(student.tdap) %>;
+      var hslda_id = <%- JSON.stringify(student.HSLDA_membership_id) %>;
+      var hslda_m_e = <%- JSON.stringify(student.HSLDA_membership_expires) %>;
+      document.getElementById('tdap').setAttribute('value', tdap);
+      document.getElementById('HSLDA_membership_id').setAttribute('value', hslda_id);
+      document.getElementById('HSLDA_membership_expires').setAttribute('value', hslda_m_e);
+
+      var grade = <%- JSON.stringify(student.grade) %>;
+      var grades = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th'];
+
+      function setGrade(){
+        var html = '';
+        var selected = '';
+        for(let i = 0; i < 12; i++){
+          var grade_i = grades[i];
+          if(grade == grade_i)
+            selected = 'selected';
+          html += `<option value="${grade_i}" ${selected}>${grade_i}</option>`;
+          selected = '';
+        }
+        $('#grade_select').html(html);
+      }
+      setGrade();
+
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Home</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <h1>NCCS</h1>
+    <br>
+    <a href="/form">Submit form</a>
+    <p style="display:inline"> | </p>
+    <a href="/submitted">View forms</a>
+    <p style="display:inline"> | </p>
+    <a href="/">Back to NCCS</a>
+    <a href="/logout" style="float: right">Sign out</a>
+    <hr>
+    <h3>Welcome <%= user.username || 'not signed in' %></h3>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+  </body>
+</html>

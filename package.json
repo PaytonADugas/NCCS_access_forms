@@ -1,0 +1,37 @@
+{
+  "name": "automate-form-ejs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "config": "^3.3.6",
+    "connect-mongo": "^4.4.1",
+    "connect-mongodb-session": "^3.0.0",
+    "cookie-parser": "~1.4.4",
+    "cross-blob": "^3.0.0",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "file-saver": "^2.0.5",
+    "fill-pdf": "^1.1.0",
+    "http-errors": "~1.6.3",
+    "jspdf": "^2.3.1",
+    "mongoose": "^5.12.13",
+    "morgan": "~1.9.1",
+    "node-fetch": "^2.6.1",
+    "nodemailer": "^6.6.3",
+    "passport": "^0.4.1",
+    "passport-google-oauth": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "passport-npm": "^2.0.0",
+    "pdfform.js": "^1.0.14",
+    "session-file-store": "^1.5.0",
+    "uuid": "^8.3.2",
+    "xmlhttprequest": "^1.8.0"
+  }
+}

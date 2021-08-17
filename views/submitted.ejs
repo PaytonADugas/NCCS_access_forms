@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Submitted</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <style>
+      thead{
+        background-color: #beedc6
+      }
+      table{
+        width: 100%;
+      }
+      tr:nth-child(even) {background-color: #f2f2f2;}
+    </style>
+
+  </head>
+  <body>
+    <a href='/home'>Home</a>
+    <h1>Submitted Forms</h1>
+    <table>
+    <thead>
+      <th>Student Name</th>
+      <th>Student ID</th>
+      <th></th>
+    </thead>
+    <% for (var i =0; i <student.length;  i++ ) { %>
+      <%var color = 'background-color:#e8e8e8';%>
+      <tr>
+        <td style=color><%=student[i].first_name%> <%=student[i].last_name%> </td><td><%=student[i].student_id%></td><td><a href="student?id=<%=student[i]._id%>" class='btn btn-link btn-sm'>select</a> </td>
+      </tr>
+    <% } %>
+  </table>
+  </body>
+</html>

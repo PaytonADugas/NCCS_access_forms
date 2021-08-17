@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Student</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+
+      td{
+        border: 2px solid;
+        padding-right: 40px;
+      }
+      thead {
+        background-color: #2e80ba;
+      }
+      th{
+        border: 2px solid;
+        text-align: center;
+        padding: 10px;
+      }
+      table{
+        table-layout: fixed;
+        width: 800px;
+        margin: auto;
+      }
+      .noRightBorder{
+        border-right: 0px;
+      }
+      .noLeftBorder{
+        border-left: 0px;
+      }
+      .head_color{
+        background-color: #5dbe9d;
+      }
+      h1{
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      p{
+        font-weight: bold;
+      }
+      .add_breaks{
+        white-space: pre-line;
+      }
+      .submitted{
+        font-size: 14px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div style='padding-top: 50px' class="container">
+      <a class='submitted' href='submitted'>Back</a>
+      <div class="jumbotron">
+        <div id="pdf_content">
+          <table>
+            <thead style='font-size:20px'>
+              <th class='noRightBorder head_color'>NORTH COUNTY CHRISTIAN SCHOOL</th>
+              <th class='noLeftBorder head_color'><%= student.school_year %></th>
+            </thead>
+            <thead>
+              <th>STUDENT INFORMATION</th>
+              <th>FAMILY INFORMATION</th>
+            </thead>
+            <tr>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>Student ID:</b> <%=student.student_id%></li>
+                  <br>
+                <li><b>Name:</b> <%=student.first_name%> <%=student.last_name%></li>
+                  <li><b>Birth Date:</b> <%=student.birth_date%></li>
+                  <li><b>Age:</b> <%=student.age%></li>
+                  <li><b>Gender:</b> <%=student.gender%></li>
+                  <li><b>Disability:</b> <%=student.disabilities%></li>
+                  <li><b>Grade:</b> <%=student.grade%></li>
+                </ul>
+              </td>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>Father's Name:</b> <%=student.father_name%></li>
+                  <li><b>Father's Employment:</b> <%=student.father_employment%></li>
+                  <li><b>Mother's Name:</b> <%=student.mother_name%></li>
+                  <li><b>Mother's Employment:</b> <%=student.mother_employment%></li>
+                  <li><b>Address:</b> <%=student.family_address%></li>
+                  <li><b>Phone:</b> <%=student.family_phone%></li>
+                  <li><b>Email:</b> <%=student.family_email%></li>
+                  <li><b>Student Currently Living:</b> <%=student.student_living_with%></li>
+                  <li><b>Student's Legal Guardian:</b> <%=student.student_guardian%></li>
+                  <li><b>Church:</b> <%=student.family_church%></li>
+                </ul>
+              </td>
+            </tr>
+
+            <thead>
+              <th>PARENTAL RESPONSIBILITY AGREEMENT</th>
+              <th>HSLDA Information</th>
+            </thead>
+            <tr>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>Affirm HSLDA:</b> <%=student.membership_agreement%></li>
+                  <li><b>Affirm Cirriculum:</b> <%=student.curriculum_agreement%></li>
+                  <li><b>Affirm Recordkeeping:</b> <%=student.record_keeping_agreement%></li>
+                  <li><b>Affirm Responsibility:</b> <%=student.parent_participation_agreement%></li>
+                  <li><b>Affirm 180 Days:</b> <%=student.parent_home_agreement%></li>
+                  <li><b>Affirm Attendance:</b> <%=student.attendance_grades_agreement%></li>
+                  <li><b>Affirm Course Details:</b> <%=student.course_of_study_course_description_agreement%></li>
+                  <li><b>Affirm Documentation:</b> <%=student.read_handbook_agreement%></li>
+                  <li><b>Affirm Withdrawal Notification:</b> <%=student.change_schools_agreement%></li>
+                  <li><b>Affirm Dismissal:</b> <%=student.enrolment_dismissal_agreement%></li>
+                  <li><b>Affirm Parental Responsibiltity:</b> <%=student.parent_direction_agreement%></li>
+                  <li><b>Father's Signature:</b> <%=student.father_signature%><br><%=student.father_sign_date%></li>
+                  <li><b>Mother's Signature:</b> <%=student.mother_signature%><br><%=student.mother_sign_date%></li>
+                </ul>
+              </td>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>HSLDA Member:</b> <%=student.HSLDA_membership%></li>
+                  <li><b>HSLDA Membership ID:</b> <%=student.HSLDA_membership_id%></li>
+                  <li><b>HSLDA Membership Expires:</b> <%=student.HSLDA_membership_expires%></li>
+                  <hr>
+                  <li class='add_breaks'><b>Notes:</b> <br><%=student.notes%></li>
+                </ul>
+              </td>
+            </tr>
+
+            <thead>
+              <th>FACULTY INFORMATION</th>
+              <th>RECIEVED INFORMATION</th>
+            </thead>
+            <tr>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>Primary Teacher:</b> <%=student.primary_teacher%></li>
+                  <li><b>Highschool Eduication:</b> <%=student.high_school_eduication%></li>
+                  <li><b>Highschool Attended:</b><%=student.high_school_attended%></li>
+                  <li><b>College Eduication:</b> <%=student.college_eduication%></li>
+                  <li><b>College Attended:</b><%=student.college_attended%></li>
+                  <li><b>College Degree:</b><%=student.college_degree%></li>
+                  <li class='add_breaks'><b>Teaching Experience:</b><br><%=student.list_training%></li>
+                </ul>
+              </td>
+              <td>
+                <ul style="list-style-type:none">
+                  <li><b>Date Recieved:</b> <%=student.dateRecieved%></li>
+                  <li class='add_breaks'><b>Fees Recieved:</b> <br> <%=student.feesRecieved%></li>
+                  <li class='add_breaks'><b>Letters Sent:</b> <br> <%=student.lettersSent%></li>
+                  <li><b>Tdap:</b> <%=student.tdap%></li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <br>
+        <div class="text-center">
+          <button id='pdf_button' onclick="downloadPDF()" class="btn btn-primary">Save as PDF</button>
+          <a href='student_edit?id=<%= student_id %>'><button class="btn btn-primary" type="button">Edit</button></a>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="downloads/pdfform.minipdf.dist.js"></script>
+    <script>
+
+    // STUDENT INFORMATION
+    var student_id = <%- JSON.stringify(student.student_id) %>;
+    var first_name = <%- JSON.stringify(student.first_name) %>;
+    var last_name = <%- JSON.stringify(student.last_name) %>;
+    var birth_date = <%- JSON.stringify(student.birth_date) %>;
+    var age = <%- JSON.stringify(student.age) %>;
+    var grade = <%- JSON.stringify(student.grade) %>;
+    var gender = <%- JSON.stringify(student.gender) %>;
+    var disabilities = <%- JSON.stringify(student.disabilities) %>;
+    var school_year = <%- JSON.stringify(student.school_year) %>;
+
+
+    // FAMILY INFORMATION
+    var father_name = <%- JSON.stringify(student.father_name) %>;
+    var father_employment = <%- JSON.stringify(student.father_employment) %>;
+    var mother_name = <%- JSON.stringify(student.mother_name) %>;
+    var mother_employment = <%- JSON.stringify(student.mother_employment) %>;
+    var family_address = <%- JSON.stringify(student.family_address) %>;
+    var family_city = <%- JSON.stringify(student.family_city) %>;
+    var family_state = <%- JSON.stringify(student.family_state) %>;
+    var family_zip = <%- JSON.stringify(student.family_zip) %>;
+    var family_phone = <%- JSON.stringify(student.family_phone) %>;
+    var family_email = <%- JSON.stringify(student.family_email) %>;
+    var student_living_with = <%- JSON.stringify(student.student_living_with) %>;
+    var student_guardian = <%- JSON.stringify(student.student_guardian) %>;
+    var family_church = <%- JSON.stringify(student.family_church) %>;
+
+    // FACULTY INFORMATION
+    var primary_teacher = <%- JSON.stringify(student.primary_teacher) %>;
+    var high_school_eduication = <%- JSON.stringify(student.high_school_eduication) %>;
+    var high_school_attended = <%- JSON.stringify(student.high_school_attended) %>;
+    var college_eduication = <%- JSON.stringify(student.college_eduication) %>;
+    var college_attended = <%- JSON.stringify(student.college_attended) %>;
+    var college_degree = <%- JSON.stringify(student.college_degree) %>;
+    var list_training = <%- JSON.stringify(student.list_training) %>;
+
+    // PARENT RESPONSIBILITYMENT AGREEMENT
+    var father_signature = <%- JSON.stringify(student.father_signature) %>;
+    var father_sign_date = <%- JSON.stringify(student.father_sign_date) %>;
+    var mother_signature = <%- JSON.stringify(student.mother_signature) %>;
+    var mother_sign_date = <%- JSON.stringify(student.mother_sign_date) %>;
+
+    // ACADEMIC RECORDS
+    var previous_school = <%- JSON.stringify(student.previous_school) %>;
+
+    // HSLDA INFORMATION
+    var HSLDA_membership = <%- JSON.stringify(student.HSLDA_membership) %>;
+    var HSLDA_membership_id = <%- JSON.stringify(student.HSLDA_membership_id) %>;
+    var HSLDA_membership_expires = <%- JSON.stringify(student.HSLDA_membership_expires) %>;
+
+    // OTHER INFORMATION
+    var notes = <%- JSON.stringify(student.notes) %>;
+    var tdap = <%- JSON.stringify(student.tdap) %>;
+    var date_recieved = <%- JSON.stringify(student.dateRecieved) %>;
+    var fees_recieved = <%- JSON.stringify(student.feesRecieved) %>;
+
+
+      const downloadFile = (blob, fileName) => {
+        const link = document.createElement('a');
+        // create a blobURI pointing to our Blob
+        link.href = URL.createObjectURL(blob);
+        link.download = fileName;
+        // some browser needs the anchor to be in the doc
+        document.body.append(link);
+        link.click();
+        link.remove();
+        // in case the Blob uses a lot of memory
+        setTimeout(() => URL.revokeObjectURL(link.href), 7000);
+      };
+
+      function downloadPDF(){
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'PDF/Student_data_PDF.pdf', true);
+        xhr.responseType = 'arraybuffer';
+        xhr.onreadystatechange=function() {
+          if (this.readyState == 4 && this.status == 200){
+            var fields = {
+              'school_year': [school_year],
+              'student_name': [first_name+' '+last_name],
+              'student_id': [student_id],
+              'birth_date': [birth_date],
+              'age': [age],
+              'gender': [gender],
+              'disabilities': [disabilities],
+              'grade': [grade],
+              'username': ['some username'],
+              'password': ['**********'],
+              'father_name': [father_name],
+              'father_employment': [father_employment],
+              'mother_name': [mother_name],
+              'mother_employment': [mother_employment],
+              'family_address': [family_address],
+              'international_address': ['N/A'],
+              'family_address': [family_address+', '+family_city+', '+family_state+', '+family_zip],
+              'family_phone': [family_phone],
+              'family_cell': [family_phone],
+              'family_email': [family_email],
+              'student_living_with': [student_living_with],
+              'student_guardian': [student_guardian],
+              'family_church': [family_church],
+              'primary_teacher': [primary_teacher],
+              'high_school_eduication': [high_school_eduication],
+              'high_school_attended': [high_school_attended],
+              'college_eduication': [college_eduication],
+              'college_attended': [college_attended],
+              'college_degree': [college_degree],
+              'list_training': [list_training],
+              'father_signature': [father_signature+' '+father_sign_date],
+              'mother_signature': [mother_signature+' '+mother_sign_date],
+              'HSLDA_membership': [HSLDA_membership],
+              'HSLDA_membership_id': [HSLDA_membership_id],
+              'HSLDA_membership_expires': [HSLDA_membership_expires],
+              'notes': [notes],
+              'date_recieved': [date_recieved],
+              'fees_recieved': [fees_recieved],
+              'previous_school': [previous_school],
+              'tdap': [tdap],
+            };
+            var filled_pdf; // Uint8Array
+            try {
+              filled_pdf = pdfform().transform(this.response, fields);
+            } catch (err) {
+              return console.log(err);
+            }
+
+            var blob = new Blob([filled_pdf], {type: 'application/pdf'});
+            downloadFile(blob, "myfile.pdf");
+
+          }
+        }
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>
